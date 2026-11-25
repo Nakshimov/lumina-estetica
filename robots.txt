@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Bloqueia arquivos que não precisam ser indexados
+Disallow: /assets/js/
+Disallow: /assets/css/
+Disallow: /README.md
+
+Sitemap: https://www.luminaestetica.com.br/sitemap.xml
