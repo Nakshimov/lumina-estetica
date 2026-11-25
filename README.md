@@ -22,7 +22,7 @@ Todo o conteúdo já está dentro do código-fonte (título, descrição, textos
 | WhatsApp / telefone | `index.html` + `assets/js/main.js` | `(61) 99999-0000` / `5561999990000` |
 | E-mail | `index.html` | `contato@luminaestetica.com.br` |
 | Endereço e CEP | `index.html` + JSON-LD | Av. das Paineiras, Quadra 10, Bloco A, Loja 12 |
-| Domínio (canonical, OG, sitemap, robots) | `index.html`, `sitemap.xml`, `robots.txt` | `www.luminaestetica.com.br` |
+| Domínio (canonical, OG, sitemap, robots) | `index.html`, `sitemap.xml`, `robots.txt` | `nakshimov.github.io/lumina-estetica` (troque quando tiver domínio próprio) |
 | Coordenadas no mapa/schema | JSON-LD de `index.html` | -15.8339, -48.0503 |
 | Histórico e números da clínica | `index.html` | Abertura em 2018, 8 anos, três profissionais, duas salas, +3 mil atendimentos |
 | Tabelas de preços | `index.html` | R$ 40 a R$ 215 |

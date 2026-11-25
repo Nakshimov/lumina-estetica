@@ -6,4 +6,4 @@ Disallow: /assets/js/
 Disallow: /assets/css/
 Disallow: /README.md
 
-Sitemap: https://www.luminaestetica.com.br/sitemap.xml
+Sitemap: https://nakshimov.github.io/lumina-estetica/sitemap.xml
