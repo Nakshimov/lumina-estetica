@@ -29,6 +29,8 @@
 *::after { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
+section[id], header[id] { scroll-margin-top: 92px; }
+#formulario-contato { scroll-margin-top: 112px; }
 
 body {
   margin: 0;
@@ -361,23 +363,26 @@ p { margin: 0 0 16px; }
 }
 .footer-bottom a { color: #91a9a1; }
 
-/* ---------- Botão flutuante WhatsApp ---------- */
+/* ---------- Popup fixo para o formulário de WhatsApp ---------- */
 .whatsapp-fixo {
   position: fixed; right: 24px; bottom: 24px; z-index: 150;
-  width: 58px; height: 58px; border-radius: 50%; background: #25d366; color: #fff;
-  display: grid; place-items: center; box-shadow: 0 10px 28px rgba(37,211,102,.38);
-  transition: transform var(--transicao);
+  display: flex; align-items: center; gap: 12px; max-width: 280px;
+  padding: 10px 16px 10px 10px; background: #fff; color: var(--verde-escuro);
+  border: 1px solid #25d366; border-radius: var(--raio);
+  box-shadow: 0 12px 32px rgba(16, 44, 36, .22);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s;
 }
-.whatsapp-fixo:hover { transform: scale(1.08); }
-.whatsapp-fixo svg { width: 30px; height: 30px; }
-.whatsapp-fixo::after {
-  content: ''; position: absolute; inset: -6px; border-radius: 50%;
-  border: 2px solid rgba(37,211,102,.5); animation: pulso 2.4s infinite;
+.whatsapp-fixo:hover { transform: translateY(-3px); }
+.whatsapp-fixo.oculto { display: none; }
+.popup-icone {
+  position: relative; flex: 0 0 auto;
+  width: 46px; height: 46px; border-radius: 50%;
+  background: #25d366; color: #fff; display: grid; place-items: center;
 }
-@keyframes pulso {
-  0% { transform: scale(.9); opacity: .8; }
-  100% { transform: scale(1.35); opacity: 0; }
-}
+.popup-icone svg { width: 26px; height: 26px; }
+.popup-texto { display: flex; flex-direction: column; line-height: 1.25; }
+.popup-texto strong { font-size: .88rem; font-weight: 600; }
+.popup-texto small { font-size: .72rem; color: var(--muted); }
 
 /* ---------- Breadcrumb ---------- */
 .breadcrumb {
@@ -522,7 +527,9 @@ p { margin: 0 0 16px; }
   .sobre-imagens .quadro { right: 12px; bottom: -20px; }
   .footer-grid { grid-template-columns: 1fr; }
   .footer-bottom { justify-content: center; text-align: center; }
-  .whatsapp-fixo { right: 16px; bottom: 16px; width: 52px; height: 52px; }
+  .whatsapp-fixo { right: 16px; bottom: 16px; max-width: none; padding: 6px; }
+  .popup-texto { display: none; }
+  .popup-icone { width: 48px; height: 48px; }
   .titulo-pagina { padding: 60px 0 64px; }
 }
 
@@ -592,6 +599,18 @@ p { margin: 0 0 16px; }
 .fotos-servico img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
 .fotos-servico figure:hover img { transform: scale(1.06); }
 .fotos-servico figcaption { font-size: .78rem; color: var(--muted); margin-top: 8px; text-align: center; }
+
+/* Galeria maior da home */
+.galeria-clinica { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.galeria-clinica figure:first-child { grid-column: 1 / -1; }
+.galeria-clinica .quadro-foto { aspect-ratio: 16 / 9; }
+.galeria-clinica figcaption { font-size: .88rem; text-align: left; }
+
+@media (max-width: 600px) {
+  .galeria-clinica { grid-template-columns: 1fr; gap: 18px; }
+  .galeria-clinica figure:first-child { grid-column: auto; }
+  .galeria-clinica .quadro-foto { aspect-ratio: 4 / 3; }
+}
 
 /* ---------- Impressão ---------- */
 @media print {

@@ -7,13 +7,31 @@
   /* ---------- Número do WhatsApp (alterar em todos os arquivos) ---------- */
   var WHATSAPP_NUMERO = '5561999990000';
 
-  /* ---------- Header com sombra ao rolar ---------- */
+  /* ---------- Header e popup do WhatsApp ---------- */
   var header = document.querySelector('.site-header');
+  var popupWhatsapp = document.querySelector('.whatsapp-fixo');
+  var areaEnvio = document.getElementById('formulario-contato');
+
+  function atualizarPopupWhatsapp() {
+    if (!popupWhatsapp || !areaEnvio) return;
+    var topoArea = areaEnvio.getBoundingClientRect().top;
+    var chegouArea = topoArea < window.innerHeight - 60;
+
+    popupWhatsapp.classList.toggle('oculto', chegouArea);
+    popupWhatsapp.setAttribute('aria-hidden', String(chegouArea));
+    if (chegouArea) {
+      popupWhatsapp.setAttribute('tabindex', '-1');
+    } else {
+      popupWhatsapp.removeAttribute('tabindex');
+    }
+  }
+
   function atualizarHeader() {
-    if (!header) return;
-    header.classList.toggle('rolado', window.scrollY > 12);
+    if (header) header.classList.toggle('rolado', window.scrollY > 12);
+    atualizarPopupWhatsapp();
   }
   window.addEventListener('scroll', atualizarHeader, { passive: true });
+  window.addEventListener('resize', atualizarHeader);
   atualizarHeader();
 
   /* ---------- Menu mobile ---------- */
