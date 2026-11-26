@@ -84,8 +84,4 @@
       window.open('https://wa.me/' + WHATSAPP_NUMERO + '?text=' + texto, '_blank', 'noopener');
     });
   }
-
-  /* ---------- Ano atual no rodapé ---------- */
-  var ano = document.getElementById('ano-atual');
-  if (ano) ano.textContent = new Date().getFullYear();
 })();

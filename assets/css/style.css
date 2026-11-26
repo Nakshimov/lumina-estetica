@@ -457,8 +457,9 @@ p { margin: 0 0 16px; }
   color: var(--verde); display: grid; place-items: center; flex-shrink: 0;
 }
 .info-contato .icone svg { width: 22px; height: 22px; }
+.info-contato > div { min-width: 0; }
 .info-contato h3 { font-size: 1.1rem; margin: 0 0 4px; }
-.info-contato p { color: var(--muted); margin: 0; font-size: .92rem; }
+.info-contato p { color: var(--muted); margin: 0; font-size: .92rem; overflow-wrap: anywhere; }
 .mapa {
   border-radius: var(--raio); overflow: hidden; border: 1px solid var(--borda);
   box-shadow: var(--sombra-leve); height: 340px; margin-top: 10px;
@@ -607,6 +608,19 @@ p { margin: 0 0 16px; }
 .galeria-clinica figcaption { font-size: .88rem; text-align: left; }
 
 @media (max-width: 600px) {
+  .galeria-clinica { grid-template-columns: 1fr; gap: 18px; }
+  .galeria-clinica figure:first-child { grid-column: auto; }
+  .galeria-clinica .quadro-foto { aspect-ratio: 4 / 3; }
+}
+
+/* Estas regras ficam no fim para sobrescrever as definições base de grid.
+   Sem isso, as colunas voltavam a 3/4 no celular e criavam rolagem horizontal. */
+@media (max-width: 860px) {
+  .etapas-lista, .fotos-servico { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .etapas-lista, .beneficios-grid, .fotos-servico { grid-template-columns: 1fr; }
   .galeria-clinica { grid-template-columns: 1fr; gap: 18px; }
   .galeria-clinica figure:first-child { grid-column: auto; }
   .galeria-clinica .quadro-foto { aspect-ratio: 4 / 3; }
