@@ -6,7 +6,6 @@
 :root {
   --verde-escuro: #173b34;
   --verde: #2f6b5e;
-  --verde-medio: #4f8979;
   --verde-claro: #eaf2ee;
   --dourado: #c2a060;
   --dourado-escuro: #8a6d33;
@@ -66,12 +65,8 @@ p { margin: 0 0 16px; }
   width: min(100% - 40px, var(--container));
   margin-inline: auto;
 }
-.container-pequeno { width: min(100% - 40px, 860px); margin-inline: auto; }
 .section { padding: 96px 0; }
 .section--creme { background: var(--creme); }
-.section--verde { background: var(--verde-escuro); color: #dce9e4; }
-.section--verde h2,
-.section--verde h3 { color: #fff; }
 .texto-centro { text-align: center; }
 .muted { color: var(--muted); }
 .sr-only {
@@ -163,8 +158,6 @@ p { margin: 0 0 16px; }
 .btn--dourado:hover { background: var(--dourado-escuro); color: #fff; transform: translateY(-2px); box-shadow: 0 12px 24px rgba(194,160,96,.28); }
 .btn--verde { background: var(--verde-escuro); color: #fff; }
 .btn--verde:hover { background: var(--verde); transform: translateY(-2px); }
-.btn--contorno { border-color: var(--verde); color: var(--verde); background: transparent; }
-.btn--contorno:hover { background: var(--verde); color: #fff; }
 .btn--branco { background: #fff; color: var(--verde-escuro); }
 .btn--branco:hover { background: var(--dourado-claro); transform: translateY(-2px); }
 .btn--pequeno { padding: 10px 20px; font-size: 0.85rem; }
@@ -228,7 +221,6 @@ p { margin: 0 0 16px; }
 
 /* ---------- Cabeçalhos de seção ---------- */
 .cabecalho-secao { max-width: 720px; margin-bottom: 52px; }
-.cabecalho-secao--centro { margin-inline: auto; text-align: center; }
 .etiqueta {
   display: inline-block; font-size: .72rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: .2em; color: var(--dourado); margin-bottom: 14px;
@@ -262,30 +254,6 @@ p { margin: 0 0 16px; }
 }
 .card-servico .link-card svg { width: 16px; height: 16px; transition: transform var(--transicao); }
 .card-servico:hover .link-card svg { transform: translateX(5px); }
-
-/* ---------- Sobre / imagem + texto ---------- */
-.sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
-.sobre-imagens { position: relative; }
-.sobre-imagens img.principal {
-  border-radius: var(--raio); width: 100%; height: 480px; object-fit: cover;
-}
-.sobre-imagens .quadro {
-  position: absolute; right: -26px; bottom: -26px;
-  background: var(--dourado); color: #fff; padding: 24px 28px; border-radius: 2px;
-  box-shadow: var(--sombra); max-width: 200px;
-}
-.sobre-imagens .quadro strong { display: block; font-family: 'Playfair Display', serif; font-size: 2.2rem; line-height: 1; }
-.sobre-imagens .quadro span { font-size: .8rem; }
-.lista-check li {
-  position: relative; padding-left: 34px; margin-bottom: 14px; color: var(--muted); font-size: .95rem;
-}
-.lista-check li::before {
-  content: ''; position: absolute; left: 0; top: 7px; width: 20px; height: 20px;
-  border-radius: 50%; background: var(--verde-claro);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232f6b5e' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
-  background-size: 12px; background-repeat: no-repeat; background-position: center;
-}
-.sobre-texto .btn { margin-top: 14px; }
 
 /* ---------- Diferenciais ---------- */
 .grade-diferenciais { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
@@ -329,40 +297,6 @@ p { margin: 0 0 16px; }
 .faq-resposta { display: none; padding: 0 24px 22px; color: var(--muted); font-size: .95rem; }
 .faq-item.aberto .faq-resposta { display: block; }
 
-/* ---------- CTA final ---------- */
-.cta-final {
-  background: linear-gradient(120deg, var(--verde-escuro), var(--verde));
-  color: #fff; padding: 84px 0; text-align: center; position: relative; overflow: hidden;
-}
-.cta-final::before,
-.cta-final::after {
-  content: ''; position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.08);
-}
-.cta-final::before { width: 420px; height: 420px; left: -160px; top: -180px; }
-.cta-final::after { width: 320px; height: 320px; right: -100px; bottom: -180px; }
-.cta-final .container { position: relative; z-index: 1; }
-.cta-final h2 { color: #fff; margin-bottom: 16px; }
-.cta-final p { color: #dbe9e4; max-width: 600px; margin: 0 auto 30px; }
-
-/* ---------- Rodapé ---------- */
-.site-footer { background: #122e29; color: #c4d4ce; padding: 76px 0 0; font-size: .9rem; }
-.footer-grid { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.2fr; gap: 44px; padding-bottom: 56px; }
-.site-footer .logo-texto strong { color: #fff; }
-.site-footer .logo-texto span { color: var(--dourado); }
-.site-footer h3 { color: #fff; font-size: 1.1rem; margin-bottom: 20px; font-family: 'Poppins', sans-serif; font-weight: 600; }
-.site-footer p { font-size: .87rem; line-height: 1.8; }
-.site-footer a:hover { color: var(--dourado-claro); }
-.footer-links li { margin-bottom: 10px; }
-.footer-links a { font-size: .87rem; }
-.footer-contato li { display: flex; gap: 12px; margin-bottom: 14px; font-size: .86rem; line-height: 1.6; }
-.footer-contato svg { width: 18px; height: 18px; color: var(--dourado); flex-shrink: 0; margin-top: 3px; }
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,.1); padding: 22px 0;
-  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
-  font-size: .78rem; color: #91a9a1;
-}
-.footer-bottom a { color: #91a9a1; }
-
 /* ---------- Popup fixo para o formulário de WhatsApp ---------- */
 .whatsapp-fixo {
   position: fixed; right: 24px; bottom: 24px; z-index: 150;
@@ -384,29 +318,6 @@ p { margin: 0 0 16px; }
 .popup-texto strong { font-size: .88rem; font-weight: 600; }
 .popup-texto small { font-size: .72rem; color: var(--muted); }
 
-/* ---------- Breadcrumb ---------- */
-.breadcrumb {
-  background: var(--creme); border-bottom: 1px solid var(--borda);
-  padding: 18px 0; font-size: .82rem; color: var(--muted);
-}
-.breadcrumb ol { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-.breadcrumb li + li::before { content: '/'; margin-right: 8px; color: var(--dourado); }
-.breadcrumb a:hover { color: var(--verde); }
-.breadcrumb [aria-current] { color: var(--verde-escuro); font-weight: 600; }
-
-/* ---------- Cabeçalho de página interna ---------- */
-.titulo-pagina {
-  background: var(--verde-escuro); color: #fff; padding: 76px 0 80px;
-  position: relative; overflow: hidden;
-}
-.titulo-pagina::after {
-  content: ''; position: absolute; width: 400px; height: 400px; border-radius: 50%;
-  right: -120px; top: -200px; border: 1px solid rgba(255,255,255,.1);
-}
-.titulo-pagina .container { position: relative; z-index: 1; }
-.titulo-pagina h1 { color: #fff; font-size: clamp(2.2rem, 4vw, 3.3rem); max-width: 820px; }
-.titulo-pagina p { color: #d7e7e1; max-width: 680px; font-size: 1.05rem; margin: 0; }
-
 /* ---------- Conteúdo de serviço ---------- */
 .servico-detalhe { display: grid; grid-template-columns: 1.15fr .85fr; gap: 66px; align-items: start; }
 .servico-detalhe .imagem-destaque {
@@ -414,7 +325,6 @@ p { margin: 0 0 16px; }
 }
 .servico-detalhe h2 { margin-top: 8px; }
 .servico-detalhe h3 { margin-top: 30px; font-size: 1.3rem; }
-.servico-detalhe ul.lista-check li { font-size: .96rem; }
 .caixa-lateral {
   background: var(--creme); border: 1px solid var(--borda);
   border-radius: var(--raio); padding: 34px 30px; position: sticky; top: 110px;
@@ -431,7 +341,6 @@ p { margin: 0 0 16px; }
 .caixa-lateral small { display: block; text-align: center; color: var(--muted); margin-top: 12px; font-size: .75rem; }
 
 /* ---------- Grade genérica de conteúdo ---------- */
-.grade-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
 .grade-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; }
 .painel {
   background: #fff; border: 1px solid var(--borda); border-radius: var(--raio);
@@ -442,12 +351,6 @@ p { margin: 0 0 16px; }
 .painel .num {
   font-family: 'Playfair Display', serif; color: var(--dourado); font-size: 1.1rem; margin-bottom: 10px;
 }
-
-/* ---------- Galeria ---------- */
-.galeria { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.galeria figure { margin: 0; border-radius: 2px; overflow: hidden; aspect-ratio: 4/3; }
-.galeria img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
-.galeria figure:hover img { transform: scale(1.07); }
 
 /* ---------- Contato ---------- */
 .contato-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
@@ -479,60 +382,6 @@ p { margin: 0 0 16px; }
 .formulario select:focus { border-color: var(--verde); box-shadow: 0 0 0 3px var(--verde-claro); }
 .formulario textarea { min-height: 120px; resize: vertical; }
 .formulario .btn { width: 100%; }
-
-/* ---------- Responsividade ---------- */
-@media (max-width: 1024px) {
-  .nav-principal { gap: 18px; }
-  .header-acoes .btn { display: none; }
-  .grade-diferenciais { grid-template-columns: repeat(2, 1fr); }
-  .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
-  .sobre-grid, .servico-detalhe, .contato-grid { gap: 44px; }
-}
-
-@media (max-width: 860px) {
-  .section { padding: 72px 0; }
-  .menu-toggle { display: flex; }
-  .nav-principal {
-    display: none; position: absolute; top: 100%; left: 0; right: 0;
-    flex-direction: column; align-items: stretch; gap: 0;
-    background: #fff; border-bottom: 1px solid var(--borda); box-shadow: var(--sombra);
-    padding: 12px 20px 20px;
-  }
-  .nav-principal.aberto { display: flex; }
-  .nav-principal a { padding: 12px 4px; border-bottom: 1px solid var(--borda); }
-  .nav-principal a::after { display: none; }
-  .hero { min-height: 560px; }
-  .hero-conteudo { padding: 70px 0; }
-  .barra-confiance .container { grid-template-columns: repeat(2, 1fr); gap: 22px; }
-  .barra-confiance .item:nth-child(2) { border-right: 0; }
-  .grade-servicos, .grade-depoimentos, .grade-3 { grid-template-columns: repeat(2, 1fr); }
-  .sobre-grid, .servico-detalhe, .contato-grid { grid-template-columns: 1fr; }
-  .sobre-imagens img.principal { height: 400px; }
-  .caixa-lateral { position: static; }
-  .galeria, .etapas-lista, .fotos-servico { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 600px) {
-  .container, .container-pequeno { width: min(100% - 32px, var(--container)); }
-  .section { padding: 60px 0; }
-  h1 { font-size: 2.25rem; }
-  h2 { font-size: 1.85rem; }
-  .hero h1 { font-size: 2.3rem; }
-  .hero-selo { gap: 18px; }
-  .hero-acoes .btn { width: 100%; }
-  .barra-confiance strong { font-size: 1.35rem; }
-  .grade-servicos, .grade-depoimentos, .grade-2, .grade-3, .grade-diferenciais,
-  .etapas-lista, .beneficios-grid, .fotos-servico { grid-template-columns: 1fr; }
-  .tabela-valores { min-width: 580px; }
-  .tabela-valores thead th, .tabela-valores tbody td { padding: 12px 14px; font-size: .84rem; }
-  .sobre-imagens .quadro { right: 12px; bottom: -20px; }
-  .footer-grid { grid-template-columns: 1fr; }
-  .footer-bottom { justify-content: center; text-align: center; }
-  .whatsapp-fixo { right: 16px; bottom: 16px; max-width: none; padding: 6px; }
-  .popup-texto { display: none; }
-  .popup-icone { width: 48px; height: 48px; }
-  .titulo-pagina { padding: 60px 0 64px; }
-}
 
 /* ---------- Etapas do procedimento ---------- */
 .etapas-lista { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; counter-reset: etapa; }
@@ -607,20 +456,52 @@ p { margin: 0 0 16px; }
 .galeria-clinica .quadro-foto { aspect-ratio: 16 / 9; }
 .galeria-clinica figcaption { font-size: .88rem; text-align: left; }
 
-@media (max-width: 600px) {
-  .galeria-clinica { grid-template-columns: 1fr; gap: 18px; }
-  .galeria-clinica figure:first-child { grid-column: auto; }
-  .galeria-clinica .quadro-foto { aspect-ratio: 4 / 3; }
+/* ---------- Responsividade (regras consolidadas) ---------- */
+@media (max-width: 1024px) {
+  .nav-principal { gap: 18px; }
+  .header-acoes .btn { display: none; }
+  .grade-diferenciais { grid-template-columns: repeat(2, 1fr); }
+  .servico-detalhe, .contato-grid { gap: 44px; }
 }
 
-/* Estas regras ficam no fim para sobrescrever as definições base de grid.
-   Sem isso, as colunas voltavam a 3/4 no celular e criavam rolagem horizontal. */
 @media (max-width: 860px) {
+  .section { padding: 72px 0; }
+  .menu-toggle { display: flex; }
+  .nav-principal {
+    display: none; position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: #fff; border-bottom: 1px solid var(--borda); box-shadow: var(--sombra);
+    padding: 12px 20px 20px;
+  }
+  .nav-principal.aberto { display: flex; }
+  .nav-principal a { padding: 12px 4px; border-bottom: 1px solid var(--borda); }
+  .nav-principal a::after { display: none; }
+  .hero { min-height: 560px; }
+  .hero-conteudo { padding: 70px 0; }
+  .barra-confiance .container { grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .barra-confiance .item:nth-child(2) { border-right: 0; }
+  .grade-servicos, .grade-depoimentos, .grade-3 { grid-template-columns: repeat(2, 1fr); }
+  .servico-detalhe, .contato-grid { grid-template-columns: 1fr; }
+  .caixa-lateral { position: static; }
   .etapas-lista, .fotos-servico { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
+  .container { width: min(100% - 32px, var(--container)); }
+  .section { padding: 60px 0; }
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.85rem; }
+  .hero h1 { font-size: 2.3rem; }
+  .hero-selo { gap: 18px; }
+  .hero-acoes .btn { width: 100%; }
+  .barra-confiance strong { font-size: 1.35rem; }
+  .grade-servicos, .grade-depoimentos, .grade-3, .grade-diferenciais,
   .etapas-lista, .beneficios-grid, .fotos-servico { grid-template-columns: 1fr; }
+  .tabela-valores { min-width: 580px; }
+  .tabela-valores thead th, .tabela-valores tbody td { padding: 12px 14px; font-size: .84rem; }
+  .whatsapp-fixo { right: 16px; bottom: 16px; max-width: none; padding: 6px; }
+  .popup-texto { display: none; }
+  .popup-icone { width: 48px; height: 48px; }
   .galeria-clinica { grid-template-columns: 1fr; gap: 18px; }
   .galeria-clinica figure:first-child { grid-column: auto; }
   .galeria-clinica .quadro-foto { aspect-ratio: 4 / 3; }
@@ -628,6 +509,6 @@ p { margin: 0 0 16px; }
 
 /* ---------- Impressão ---------- */
 @media print {
-  .site-header, .whatsapp-fixo, .cta-final, .site-footer { display: none !important; }
+  .site-header, .whatsapp-fixo { display: none !important; }
   body { color: #000; }
 }

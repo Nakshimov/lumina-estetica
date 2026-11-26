@@ -30,8 +30,17 @@
     if (header) header.classList.toggle('rolado', window.scrollY > 12);
     atualizarPopupWhatsapp();
   }
-  window.addEventListener('scroll', atualizarHeader, { passive: true });
-  window.addEventListener('resize', atualizarHeader);
+  var atualizando = false;
+  function agendarAtualizacao() {
+    if (atualizando) return;
+    atualizando = true;
+    window.requestAnimationFrame(function () {
+      atualizando = false;
+      atualizarHeader();
+    });
+  }
+  window.addEventListener('scroll', agendarAtualizacao, { passive: true });
+  window.addEventListener('resize', agendarAtualizacao);
   atualizarHeader();
 
   /* ---------- Menu mobile ---------- */
