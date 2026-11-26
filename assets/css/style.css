@@ -220,7 +220,7 @@ p { margin: 0 0 16px; }
 .barra-confiance span { font-size: .78rem; letter-spacing: .05em; color: #d5e8e0; }
 
 /* ---------- Cabeçalhos de seção ---------- */
-.cabecalho-secao { max-width: 720px; margin-bottom: 52px; }
+.cabecalho-secao { max-width: 720px; margin-inline: auto; margin-bottom: 52px; }
 .etiqueta {
   display: inline-block; font-size: .72rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: .2em; color: var(--dourado); margin-bottom: 14px;
